@@ -32,7 +32,7 @@ const Image = (props) => {
 
 Image.defaultProps = {
   shape: "circle",
-  src: "https://img1.daumcdn.net/thumb/R1280x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/22QT/image/p-RX98d_34y9ElK_Qfwz8OfHhxM.jpg",
+  src: "https://mean0images.s3.ap-northeast-2.amazonaws.com/4.jpeg",
   size: 36,
 };
 
@@ -45,7 +45,7 @@ const AspectInner = styled.div`
     position: relative;
     padding-top: 75%;
     overflow: hidden;
-    background-image: url('${(props) => props.src}');
+    background-image: url("${(props) => props.src}");
     background-size: cover;
 `;
 

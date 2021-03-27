@@ -1,39 +1,48 @@
 import React from "react";
-import {Grid,Image, Text} from "../elements"
+// import Grid from "../elements/Grid";
+// import Image from "../elements/Image";
+// import Text from "../elements/Text";
+
+import {Grid, Image, Text} from "../elements";
+
+
 const Post = (props) => {
 
     return (
-    <div>
-      <Grid>
-          <Grid is_flex>
-            <Image shape="circle" src={props.src} />
-            <Text bold>{props.user_info.user_name}</Text>
-            <Text>{props.insert_dt}</Text>
+      <React.Fragment>
+        <Grid>
+          <Grid is_flex padding="16px">
+            <Grid is_flex width="auto">
+              <Image shape="circle" src={props.src} />
+              <Text bold>{props.user_info.user_name}</Text>
+            </Grid>
+            <Grid is_flex width="auto">
+              <Text>{props.insert_dt}</Text>
+            </Grid>
           </Grid>
           <Grid padding="16px">
-            <Text bold>{props.contents}</Text>
+            <Text>{props.contents}</Text>
           </Grid>
           <Grid>
-            <Image shape= "rectangle" src={props.src}/>
+            <Image shape="rectangle" src={props.src} />
           </Grid>
           <Grid padding="16px">
-            <Text bold>댓글 {props.comment_cnt}개</Text>
+            <Text margin="0px" bold>댓글 {props.comment_cnt}개</Text>
           </Grid>
-      </Grid>
-    </div>
+        </Grid>
+      </React.Fragment>
     );
 }
 
-Post.defaultProps ={
+Post.defaultProps = {
   user_info: {
-    user_name: "Bradlee",
-    user_profile: "https://img1.daumcdn.net/thumb/R1280x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/22QT/image/p-RX98d_34y9ElK_Qfwz8OfHhxM.jpg",
+    user_name: "mean0",
+    user_profile: "https://mean0images.s3.ap-northeast-2.amazonaws.com/4.jpeg",
   },
-  image_url: "https://img1.daumcdn.net/thumb/R1280x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/22QT/image/p-RX98d_34y9ElK_Qfwz8OfHhxM.jpg",
-  contents: "내가 시바견이다!",
+  image_url: "https://mean0images.s3.ap-northeast-2.amazonaws.com/4.jpeg",
+  contents: "고양이네요!",
   comment_cnt: 10,
   insert_dt: "2021-02-27 10:00:00",
-
 };
 
 export default Post;
