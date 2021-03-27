@@ -94,7 +94,6 @@ const signupFB = (id, pwd, user_name) => {
 const loginCheckFB = () => {
   return function (dispatch, getState, {history}){
     auth.onAuthStateChanged((user) => {
-      console.log("헬로")
       if(user){
         dispatch(
           setUser({
